@@ -23,6 +23,8 @@ const authLink = setContext(() => {
     link: authLink.concat(httpLink),
     cache: new InMemoryCache()
   });
+
+ 
   
 export default (
     <ApolloProvider client={client}>

@@ -8,7 +8,7 @@ const initialState = {
 if(localStorage.getItem('jwtToken')){
     const decodedToken = jwtDecode(localStorage.getItem('jwtToken'))
 
-    if(decodedToken.exp * 1000 < Date.new()){
+    if (decodedToken.exp * 1000 < Date.now()){
         localStorage.removeItem('jwtToken')
     } else {
         initialState.user = decodedToken
