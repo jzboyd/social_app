@@ -18,6 +18,8 @@ function Home() {
   console.log(`Loading: ${loading}`);
 
   return (
+    <>
+    <h1>Hello, World!</h1>
     <Grid columns={3}>
       <Grid.Row className="page-title">
         <h1>Recent Posts</h1>
@@ -42,6 +44,7 @@ function Home() {
         )}
       </Grid.Row>
     </Grid>
+    </>
   );
 }
 

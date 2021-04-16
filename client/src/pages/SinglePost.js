@@ -68,7 +68,7 @@ function SinglePost(props) {
             <Card fluid>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
-                <Card.Meta>{createdAt}</Card.Meta>
+                <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
                 <Card.Description>{body}</Card.Description>
               </Card.Content>
               <hr/>
@@ -104,7 +104,8 @@ function SinglePost(props) {
                     placeholder="Comment.."
                     name="comment"
                     value={comment}
-                    onChange={event => setComment(event.target.value)}
+                    onChange={(event) => setComment(event.target.value)}
+                    ref={commentInputRef}
                     />
                     <button type="submit"
                     className="ui button blue"
@@ -118,7 +119,7 @@ function SinglePost(props) {
                 </Card.Content>
               </Card>
             )}
-            {comments.map(comment => (
+            {comments.map((comment) => (
               <Card fluid key={comment.id}>
                 <Card.Content>
                   {user && user.username === comment.username && (
